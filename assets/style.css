@@ -4,10 +4,15 @@
     --border: #5DA8C7;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: var(--background);
+    overflow-x: hidden;
 }
 
 .header {
@@ -72,6 +77,7 @@ body {
     font-size: 44px;
     font-weight: normal;
     color: #FFFFFF;
+    text-decoration: none;
 
     border: none;
     background-color: var(--background);
@@ -113,7 +119,7 @@ body {
     z-index: 10;
 
     transform: translateY(-100%);
-    transition: transform 0.5s ease;
+    transition: transform 0.5 s ease;
 }
 
 .header__nav.active {
@@ -171,4 +177,80 @@ body {
 
 .header__element:active a{
     color: #FFFFFF;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.description {
+    display: grid;
+
+    grid-template-columns: 347px 346px 347px;
+    grid-template-rows: 83px 336px;
+    column-gap: 31px;
+    row-gap: 62px
+}
+
+.description__titleDiv {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    outline-style: solid;
+    outline-width: 5px;
+    outline-offset: -5px;
+    outline-color: var(--border);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.description__title {
+    font-family: Poetsen One;
+    font-size: 44px;
+}
+
+.description__imgDiv {
+    width: 347px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+
+    grid-column: 1 /2;
+    grid-row: 2 / 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description__textDiv {
+    grid-column: 2 / 4;
+    grid-row: 2  / 3;
+    padding: 15px;
+
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    outline-style: solid;
+    outline-offset: -5px;
+    outline-color: var(--border);
+    outline-width: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.description__text {
+    font-family: Muli;
+    font-size: 22px;
+    line-height: 140%;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 31px;
 }

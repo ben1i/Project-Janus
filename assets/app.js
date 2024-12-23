@@ -120,3 +120,21 @@ hoverArea.addEventListener('mouseenter', function() {
 nav.addEventListener('mouseleave', function() {
   nav.classList.remove('active');
 })
+/* Fin du code de la nav */
+
+var idButton = document.querySelector('.header__button');
+var buttonSVGs = idButton.querySelectorAll('img');
+
+function alternateButtonColor() {
+  let isBlue = true;
+  setInterval(() => {
+    idButton.style.backgroundColor = isBlue ? "#406CBF" : "#11BCF5";
+    idButton.style.color = isBlue ? "#FFFFFF" : "#000000";
+    buttonSVGs.forEach(svg => {
+      svg.style.filter = isBlue ? "invert(0%)" : "invert(100%)";
+    });
+    isBlue = !isBlue;
+  }, 1000);
+}
+
+alternateButtonColor();
