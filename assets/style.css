@@ -192,7 +192,8 @@ main {
     grid-template-columns: 347px 346px 347px;
     grid-template-rows: 83px 336px;
     column-gap: 31px;
-    row-gap: 62px
+    row-gap: 62px;
+    margin-bottom: 124px;
 }
 
 .description__titleDiv {
@@ -253,4 +254,33 @@ main {
     text-align: left;
     margin-top: 0;
     margin-bottom: 31px;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.socials__titleDiv {
+    width: 1102px;
+    height: 83px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    outline-offset: -5px;
+    outline-width: 5px;
+    outline-color: var(--border);
+    outline-style: solid;
+}
+
+.socials__title {
+    color: #000000;
+
+    font-family: Poetsen One;
+    font-size: 44px;
+    font-weight: normal;
 }
