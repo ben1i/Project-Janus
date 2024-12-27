@@ -360,6 +360,7 @@ main {
 
 .socials__imgDiv img {
     width: 317px;
+    height: 317px;
 }
 
 .socials__paragraph {
@@ -459,4 +460,33 @@ main {
     grid-row: 2 / 3;
 
     background-color: #69A45A;
+}
+
+.socials__othersGrid {
+    display: grid;
+    grid-template-columns: 347px 346px 347px;
+    grid-template-rows: 83px 409px;
+    row-gap: 31px;
+    column-gap: 31px;
+}
+
+.socials__Channel--reddit {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    background-color: #FF4500;
+}
+
+.socials__Channel--discord {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
+    background-color: #161CBC;
+}
+
+.socials__Channel--smponline {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+
+    background-color: #FF002A;
 }
