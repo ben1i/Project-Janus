@@ -15,6 +15,10 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+}
+
 .header {
     width: 100vw;
     height: 100vh;
@@ -124,6 +128,8 @@ body {
 
 .header__nav.active {
     transform: translateY(0);
+
+    transition: all .3s ease-out;
 }
 
 .header__nav img {
@@ -153,7 +159,6 @@ body {
 }
 
 .header__element a {
-    text-decoration: none;
     color: #000000;
     text-align: center;
     font-family: Muli;
@@ -275,6 +280,8 @@ main {
     outline-width: 5px;
     outline-color: var(--border);
     outline-style: solid;
+
+    margin-bottom: 62px;
 }
 
 .socials__title {
@@ -283,4 +290,173 @@ main {
     font-family: Poetsen One;
     font-size: 44px;
     font-weight: normal;
+}
+
+.socials__flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 62px;
+}
+
+.socials__youtubeGrid {
+    display: grid;
+    grid-template-columns: 347px 346px 347px;
+    grid-template-rows: 83px repeat(2, 409px);
+    row-gap: 31px;
+    column-gap: 31px;
+}
+
+.socials__subtitleDiv {
+    grid-column: 2 / 3;
+    grid-row: 1 /2;
+
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    outline-offset: -5px;
+    outline-width: 5px;
+    outline-color: var(--border);
+    outline-style: solid;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials__subtitle {
+    font-family: Poetsen One;
+    font-size: 31px;
+}
+
+.socials__Channel {
+    border-radius: 8px;
+    outline-offset: -5px;
+    outline-width: 5px;
+    outline-color: #FFFFFF;
+    outline-style: solid;
+}
+
+.socials__Channel a {
+    width: 100%;
+    height: 100% - 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 15px;
+
+    margin-bottom: 0;
+}
+
+.socials__imgDiv {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 31px;
+}
+
+.socials__imgDiv img {
+    width: 317px;
+}
+
+.socials__paragraph {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 287px;
+
+    font-family: Muli;
+    font-size: 16px;
+    line-height: 140%;
+    color: #000000;
+    font-weight: 600;
+
+    display: none;
+}
+
+.socials__name {
+    margin-top: 0;
+    text-align: center;
+
+    color: #000000;
+    font-family: Muli;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.socials__Channel--cmc {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    background-color: var(--background);
+}
+
+.socials__Channel--cmc .socials__paragraph,
+.socials__Channel--cmc .socials__name {
+    color: #FFFFFF;
+}
+
+.socials__Channel--cmcLive {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
+    background-color: #FFA808;
+}
+
+.socials__Channel--cmcVods {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+
+    background-color: #11BCF5;
+}
+
+.socials__Channel--cmcPlus {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+
+    background-color: #E6A28B; 
+}
+
+.socials__Channel:hover img {
+    opacity: 0;
+}
+
+.socials__Channel:hover .socials__paragraph {
+    display: inline-block;
+}
+
+.socials__Channel:active {
+    background-color: #000000;
+}
+
+.socials__Channel:active .socials__name,
+.socials__Channel:active .socials__paragraph {
+    color: #FFFFFF;
+}
+
+.socials__twitchGrid {
+    display: grid;
+    grid-template-columns: 347px 346px 347px;
+    grid-template-rows: 83px 409px;
+    row-gap: 31px;
+    column-gap: 31px;
+}
+
+.socials__Channel--cmcLive2 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    background-color: #FFA808
+}
+
+.socials__Channel--minecraft {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
+    background-color: #69A45A;
 }
