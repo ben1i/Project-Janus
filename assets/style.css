@@ -13,6 +13,12 @@ body {
     padding: 0;
     background-color: var(--background);
     overflow-x: hidden;
+
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr 1102px 1fr;
+    grid-template-rows: 1080px 1fr;
 }
 
 a {
@@ -23,6 +29,10 @@ a {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
+
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    
 }
 
 .header__page {
@@ -189,6 +199,24 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+
+    width: fit-content;
+    align-self: center;
+
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.main__background {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+
+    background-image: url(./images/thumbnails.png);
+    opacity: 0.1;
+
+    z-index: -10;
 }
 
 .description {
@@ -486,6 +514,11 @@ main {
     background-color: #161CBC;
 }
 
+.socials__Channel--discord .socials__name, 
+.socials__Channel--discord .socials__paragraph {
+    color: #FFFFFF;
+}
+
 .socials__Channel--smponline {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
@@ -544,4 +577,59 @@ main {
     margin-bottom: 0;
     font-family: Muli;
     font-size: 22px;
+}
+
+.crew__paragraph {
+    text-align: center;
+    font-family: Muli;
+    font-size: 31px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+}
+
+.crew__Channel--gavin {
+    background-color: #730CE1;
+}
+
+.crew__Channel--quacks {
+    background-color: #1880EF;
+}
+
+.crew__Channel--loki {
+    background-color: #F04823;
+}
+
+.crew__Channel--solidjj {
+    background-color: #FFFFFF;
+}
+
+.crew__Channel--farethia {
+    background-color: #63382C;
+}
+
+.crew__Channel--itsasaii {
+    background-color: #7F9BC0;
+}
+
+.crew__Channel--gavin .socials__name,
+.crew__Channel--quacks .socials__name,
+.crew__Channel--farethia .socials__name,
+.crew__Channel--gavin .socials__paragraph,
+.crew__Channel--quacks .socials__paragraph,
+.crew__Channel--farethia .socials__paragraph {
+    color: #FFFFFF;
+}
+
+.donoguys {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.donoguys--right {
+    grid-column: 3 / 4;
 }
