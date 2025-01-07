@@ -37,7 +37,7 @@ navExit.addEventListener('click', function() {
 });
 
 
-if (window.location.pathname === "/index.html") {
+if (socialsParagraphs) {
 
     if(window.matchMedia("(min-width: 1200px)").matches) {
 
@@ -699,7 +699,7 @@ if (window.location.pathname === "/index.html") {
     }
 }
 
-if (window.location.pathname === "/critic/index.html") {
+if (criticNav) {
 
     if(window.matchMedia("(min-width: 1200px)").matches) {
 
