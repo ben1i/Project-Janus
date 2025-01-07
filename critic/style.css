@@ -1,0 +1,247 @@
+.critic {
+    display: flex;
+    flex-direction: column;
+
+    background-color: #FFFFFF;
+
+    font-family: Argent Pixel CF;
+
+    max-width: 100%;
+}
+
+.background {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    opacity: 0.1;
+}
+
+.unfunny__background {
+    background-image: url(/assets/images/critic/thumbnails--glitched.png);
+}
+
+.others__background {
+    background-image: url(/assets/images/critic/thumbnails--broken.png);
+}
+
+.yourself__background {
+    background-image: url(/assets/images/critic/thumbnails--destroyed.png);
+}
+
+.critic__header {
+    height: 0;
+    width: 100vw;
+}
+
+.critic__h1 {
+    margin-top: 31px;
+
+    text-align: center;
+
+    font-size: 44px;
+    margin-bottom: 62px;
+
+    max-width: 1150px;
+}
+
+.critic__h3 {
+    text-align: left;
+
+    font-size: 22px;
+
+    margin-top: 0;
+    margin-bottom: 124px;
+
+    max-width: 1150px;
+}
+
+.unfunny {
+    width: 100%;
+    height: fit-content;
+    padding-left: 31px;
+    padding-right: 31px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+}
+
+.title {
+    margin-top: 0;
+    margin-bottom: 62px;
+
+    text-align: center;
+
+    font-size: 31px;
+
+    max-width: 1150px;
+}
+
+.paragraph {
+    margin-top: 0;
+    margin-bottom: 31px;
+
+    text-align: left;
+
+    max-width: 1150px;
+}
+
+.paragraph--bottom {
+    margin-bottom: 0;
+}
+
+.critic__gradient {
+    width: 100vw;
+    height: 124px;
+}
+
+.critic__gradient--grey {
+    background: linear-gradient(180deg, #FFF 0%, #838383 100%);
+}
+
+.critic__gradient--black {
+    background: linear-gradient(180deg, #838383 0%, #000 100%);
+}
+
+.critic__h3--grey {
+    margin-bottom: 62px;
+}
+
+.others {
+    width: 100vw;
+    height: fit-content;
+    padding-left: 31px;
+    padding-right: 31px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #838383;
+
+    position: relative;
+}
+
+.yourself {
+    width: 100vw;
+    height: fit-content;
+    padding-left: 31px;
+    padding-right: 31px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #000000;
+    color: #FFFFFF;
+
+    padding-bottom: 124px;
+
+    position: relative;
+}
+
+.footer {
+    border-top: 5px solid #FFFFFF;
+}
+
+.background-images {
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    
+    .critic__h1 {
+        width: 60%;
+    
+        font-size: 88px;
+    }
+    
+    .critic__h3 {
+        width: 60%;
+    
+        font-size: 31px;
+    }
+    
+    .title {
+        width: 60%;
+    
+        font-size: 44px;
+    }
+    
+    .paragraph {
+        width: 60%;
+    
+        font-size: 22px;
+    }
+
+    .unfunny__dono {
+        background-image: url(/assets/images/critic/donoguy1--normal.png), url(/assets/images/critic/donoguy2--normal.png), url(/assets/images/critic/donoguy3--normal.png), url(/assets/images/critic/donoguy4--normal.png), url(/assets/images/critic/donoguy5--normal.png), url(/assets/images/critic/donoguy6--normal.png);
+        
+        opacity: 1;
+        
+        background-repeat: no-repeat;
+        background-size: 12%;
+        background-position-x: 1%, 3%, 6%, 90%, 93%, 97%;
+        background-position-y: 50px, 650px, 340px, 50px, 650px, 300px;
+    }
+
+    .others__dono {
+        background-image: url(/assets/images/critic/donoguy1--glitched.png), url(/assets/images/critic/donoguy2--glitched.png), url(/assets/images/critic/donoguy3--glitched.png), url(/assets/images/critic/donoguy4--glitched.png), url(/assets/images/critic/donoguy5--glitched.png), url(/assets/images/critic/donoguy6--glitched.png);
+        
+        opacity: 1;
+        
+        background-repeat: no-repeat;
+        background-size: 12%;
+        background-position-x: 2%, 3%, 7%, 90%, 93%, 97%;
+        background-position-y: 50px, 400px, 250px, 203px, 3px, 408px;
+    }
+
+    .yourself__dono {
+        background-image: url(/assets/images/critic/donoguy1--destroyed.png), url(/assets/images/critic/donoguy2--destroyed.png), url(/assets/images/critic/donoguy3--destroyed.png), url(/assets/images/critic/donoguy4--destroyed.png), url(/assets/images/critic/donoguy5--destroyed.png), url(/assets/images/critic/donoguy6--destroyed.png);
+        
+        opacity: 1;
+        
+        background-repeat: no-repeat;
+        background-size: 12%;
+        background-position-x: 2%, 3%, 7%, 90%, 93%, 97%;
+        background-position-y: 50px, 400px, 250px, 203px, 3px, 408px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .unfunny__dono {
+        background-position-x: 1%, 3%, 6%, 90%, 93%, 97%;
+        background-position-y: 50px, 650px, 340px, 50px, 650px, 300px;
+    }
+
+    .others__dono {
+        background-image: url(/assets/images/critic/donoguy1--glitched.png), url(/assets/images/critic/donoguy2--glitched.png),  url(/assets/images/critic/donoguy4--glitched.png), url(/assets/images/critic/donoguy5--glitched.png);
+        
+        background-position-x: 2%, 3%, 90%, 93%;
+        background-position-y: 30px, 300px, 212px, 25px;
+    }
+
+    .yourself__dono {
+        background-position-x: 2%, 3%, 7%, 90%, 93%, 97%;
+        background-position-y: 50px, 400px, 250px, 203px, 3px, 408px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .unfunny__dono {
+        background-size: 5%;
+    }
+
+    .others__dono {
+        background-size: 5%;
+    }
+
+    .yourself__dono {
+        background-size: 5%;
+    }
+}
