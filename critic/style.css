@@ -4,7 +4,7 @@
 
     background-color: #FFFFFF;
 
-    font-family: Argent Pixel CF;
+    font-family: "argent-pixel-cf", sans-serif;
 
     max-width: 100%;
 }
@@ -14,18 +14,20 @@
     width: 100vw;
     height: 100%;
     opacity: 0.1;
+
+    pointer-events: none;
 }
 
 .unfunny__background {
-    background-image: url(/assets/images/critic/thumbnails--glitched.png);
+    background-image: url(../assets/images/critic/thumbnails--glitched.png);
 }
 
 .others__background {
-    background-image: url(/assets/images/critic/thumbnails--broken.png);
+    background-image: url(../assets/images/critic/thumbnails--broken.png);
 }
 
 .yourself__background {
-    background-image: url(/assets/images/critic/thumbnails--destroyed.png);
+    background-image: url(../assets/images/critic/thumbnails--destroyed.png);
 }
 
 .critic__header {
@@ -180,7 +182,7 @@
     }
 
     .unfunny__dono {
-        background-image: url(/assets/images/critic/donoguy1--normal.png), url(/assets/images/critic/donoguy2--normal.png), url(/assets/images/critic/donoguy3--normal.png), url(/assets/images/critic/donoguy4--normal.png), url(/assets/images/critic/donoguy5--normal.png), url(/assets/images/critic/donoguy6--normal.png);
+        background-image: url(../assets/images/critic/donoguy1--normal.png), url(../assets/images/critic/donoguy2--normal.png), url(../assets/images/critic/donoguy3--normal.png), url(../assets/images/critic/donoguy4--normal.png), url(../assets/images/critic/donoguy5--normal.png), url(../assets/images/critic/donoguy6--normal.png);
         
         opacity: 1;
         
@@ -191,7 +193,7 @@
     }
 
     .others__dono {
-        background-image: url(/assets/images/critic/donoguy1--glitched.png), url(/assets/images/critic/donoguy2--glitched.png), url(/assets/images/critic/donoguy3--glitched.png), url(/assets/images/critic/donoguy4--glitched.png), url(/assets/images/critic/donoguy5--glitched.png), url(/assets/images/critic/donoguy6--glitched.png);
+        background-image: url(../assets/images/critic/donoguy1--glitched.png), url(../assets/images/critic/donoguy2--glitched.png), url(../assets/images/critic/donoguy3--glitched.png), url(../assets/images/critic/donoguy4--glitched.png), url(../assets/images/critic/donoguy5--glitched.png), url(../assets/images/critic/donoguy6--glitched.png);
         
         opacity: 1;
         
@@ -202,7 +204,7 @@
     }
 
     .yourself__dono {
-        background-image: url(/assets/images/critic/donoguy1--destroyed.png), url(/assets/images/critic/donoguy2--destroyed.png), url(/assets/images/critic/donoguy3--destroyed.png), url(/assets/images/critic/donoguy4--destroyed.png), url(/assets/images/critic/donoguy5--destroyed.png), url(/assets/images/critic/donoguy6--destroyed.png);
+        background-image: url(../assets/images/critic/donoguy1--destroyed.png), url(../assets/images/critic/donoguy2--destroyed.png), url(../assets/images/critic/donoguy3--destroyed.png), url(../assets/images/critic/donoguy4--destroyed.png), url(../assets/images/critic/donoguy5--destroyed.png), url(../assets/images/critic/donoguy6--destroyed.png);
         
         opacity: 1;
         
@@ -220,7 +222,7 @@
     }
 
     .others__dono {
-        background-image: url(/assets/images/critic/donoguy1--glitched.png), url(/assets/images/critic/donoguy2--glitched.png),  url(/assets/images/critic/donoguy4--glitched.png), url(/assets/images/critic/donoguy5--glitched.png);
+        background-image: url(../assets/images/critic/donoguy1--glitched.png), url(../assets/images/critic/donoguy2--glitched.png),  url(../assets/images/critic/donoguy4--glitched.png), url(../assets/images/critic/donoguy5--glitched.png);
         
         background-position-x: 2%, 3%, 90%, 93%;
         background-position-y: 30px, 300px, 212px, 25px;

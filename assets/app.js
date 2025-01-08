@@ -36,8 +36,34 @@ navExit.addEventListener('click', function() {
     nav.classList.remove('header__nav--active');
 });
 
+if (criticNav) {
 
-if (socialsParagraphs) {
+    if(window.matchMedia("(min-width: 1200px)").matches) {
+
+        burgerMenu.classList.add('hidden');
+        navExit.classList.add('hidden');
+
+        /*Corrigé par ChatGPT : Descente de la nav au passage de la souris*/
+        const hoverArea = document.createElement('div');
+
+        hoverArea.classList.add('header__hover-area');
+        document.body.appendChild(hoverArea);
+
+        hoverArea.addEventListener('mouseenter', function() {
+            criticNav.classList.add('header__nav--active');
+        })
+
+        nav.addEventListener('mouseleave', function() {
+            criticNav.classList.remove('header__nav--active');
+        });
+    }
+
+    if (window.matchMedia("(max-width: 1200px)").matches) {
+
+        burgerMenu.classList.remove('hidden');
+        navExit.classList.remove('hidden');
+    }
+} else if (donoguysAsides) {
 
     if(window.matchMedia("(min-width: 1200px)").matches) {
 
@@ -205,14 +231,8 @@ if (socialsParagraphs) {
         var buttonSVGs = idButton.querySelectorAll('img');
         
         function alternateButtonColor() {
-            let isBlue = true;
             setInterval(() => {
-            idButton.style.backgroundColor = isBlue ? "#406CBF" : "#11BCF5";
-            idButton.style.color = isBlue ? "#FFFFFF" : "#000000";
-            buttonSVGs.forEach(svg => {
-                svg.style.filter = isBlue ? "invert(0%)" : "invert(100%)";
-            });
-            isBlue = !isBlue;
+                idButton.classList.toggle('header__button--alternate');
             }, 1000);
         }
         
@@ -696,34 +716,5 @@ if (socialsParagraphs) {
         for (let i = 0; i < donoguysAsides.length; i++) {
             donoguysAsides[i].classList.add('hidden');
         }
-    }
-}
-
-if (criticNav) {
-
-    if(window.matchMedia("(min-width: 1200px)").matches) {
-
-        burgerMenu.classList.add('hidden');
-        navExit.classList.add('hidden');
-
-        /*Corrigé par ChatGPT : Descente de la nav au passage de la souris*/
-        const hoverArea = document.createElement('div');
-
-        hoverArea.classList.add('header__hover-area');
-        document.body.appendChild(hoverArea);
-
-        hoverArea.addEventListener('mouseenter', function() {
-            criticNav.classList.add('header__nav--active');
-        })
-
-        nav.addEventListener('mouseleave', function() {
-            criticNav.classList.remove('header__nav--active');
-        });
-    }
-
-    if (window.matchMedia("(max-width: 1200px)").matches) {
-
-        burgerMenu.classList.remove('hidden');
-        navExit.classList.remove('hidden');
     }
 }
