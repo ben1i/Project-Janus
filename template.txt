@@ -1,0 +1,37 @@
+<div class="data__Card data__Card--cmcYtb">
+    <img src="../assets/images/cmcYtbpp.png" alt="CallMeCarson's YouTube profile picture" srcset="../assets/images/retina/cmcYtbpp@2x.png 2x">
+
+    <div class="data__info data__info--cmcYtb">
+        <h4 class="data__subtitle data__subtitle--cmcYtb">CallMeCarson</h4>
+
+        <div class="data__sheets data__general data__general--cmcYtb">
+            <h5 class="data__h5 data__generalTitle data__generalTitle--cmc">General data</h5>
+
+            <ul class="data__list">
+                <li class="data__element">Channel created on the <strong class="data__number">11th May 2012</strong></li>
+                <li class="data__element"><strong class="data__number">2.56 Million</strong> subscribers</li>
+                <li class="data__element"><strong class="data__number">416,218,523</strong> video views</li>
+                <li class="data__element"><strong class="data__number">97</strong> videos</li>
+            </ul>
+        </div>
+
+        <div class="data__sheets data__views data__view--cmcYtb">
+            <h5 class="data__h5 data__viewsTitle data__viewsTitle--cmc">Average views</h5>
+
+            <ul class="data__list">
+                <li class="data__element">Before controversy: <strong class="data__number">8.86 Million</strong> views</li>
+                <li class="data__element">After controversy: <strong class="data__number">630K</strong> views</li>
+            </ul>
+        </div>
+
+        <div class="data__sheets data__evolution data__evolution--cmcYtb">
+            <h5 class="data__h5 data__evolutionTitle data__evolutionTitle--cmc">Subscriber evolution</h5>
+
+            <ul class="data__list">
+                <li class="data__element">2016 - 02/2020: <strong class="data__number">+2,500,000</strong> subscribers</li>
+                <li class="data__element">02/2020 - 01/2021: <strong class="data__number">+830,000</strong> subscribers</li>
+                <li class="data__element">01/2021 - 11/2024: <strong class="data__number">-770,000</strong> subscribers</li>
+            </ul>
+        </div>
+    </div>
+</div>

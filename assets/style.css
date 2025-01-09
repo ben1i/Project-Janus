@@ -263,6 +263,16 @@ a {
     color: #FFFFFF;
 }
 
+.header__element--active {
+    background-color: var(--color2);
+    border-right: 5px solid #FFFFFF;
+    border-left: 5px solid #FFFFFF;
+}
+
+.header__element--active a{
+    color: #FFFFFF;
+}
+
 .header__element--prom {
     grid-column: 1 / 4;
     grid-row: 1 / 2;
