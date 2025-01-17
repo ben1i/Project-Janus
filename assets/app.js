@@ -206,13 +206,14 @@ if (!criticNav) {
     document.addEventListener('DOMContentLoaded', () => {
         if (window.matchMedia("(min-width: 1200px)").matches) {
             var imagesCount = 30;
+            const imageSize = 150;
         } else if (window.matchMedia("(max-width: 1200px)").matches) {
             var imagesCount = 15;
+            const imageSize = 100;
         }
 
         const headerPage = document.querySelector('.header__page');
         const titleDiv = document.querySelector('.header__titleDiv');
-        const imageSize = 150;
 
         // Set styles for the header__page
         headerPage.style.position = 'relative';
