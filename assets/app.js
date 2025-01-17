@@ -271,7 +271,13 @@ if (!criticNav) {
                 img.style.position = 'absolute';
                 img.style.width = `${imageSize}px`;
                 img.style.height = `${imageSize}px`;
-                img.style.backgroundImage = `url(${emotesData[i]})`;
+                
+                if (dataSocial) {
+                    img.style.backgroundImage = `url(${emotesData[i]})`;
+                } else {
+                    img.style.backgroundImage = `url(${emotes[i]})`;
+                }
+
                 img.style.backgroundSize = 'cover';
                 img.style.backgroundPosition = 'center';
                 img.style.backgroundSize = 'contain';
