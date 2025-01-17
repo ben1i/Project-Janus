@@ -206,10 +206,10 @@ if (!criticNav) {
     document.addEventListener('DOMContentLoaded', () => {
         if (window.matchMedia("(min-width: 1200px)").matches) {
             var imagesCount = 30;
-            const imageSize = 150;
+            var imageSize = 150;
         } else if (window.matchMedia("(max-width: 1200px)").matches) {
             var imagesCount = 15;
-            const imageSize = 100;
+            var imageSize = 100;
         }
 
         const headerPage = document.querySelector('.header__page');
