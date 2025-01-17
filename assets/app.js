@@ -83,150 +83,6 @@ if (criticNav) {
         burgerMenu.classList.add('hidden');
         navExit.classList.add('hidden');
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const headerPage = document.querySelector('.header__page');
-            const titleDiv = document.querySelector('.header__titleDiv');
-            const imagesCount = 30;
-            const imageSize = 150;
-        
-            // Set styles for the header__page
-            headerPage.style.position = 'relative';
-            headerPage.style.overflowX = 'hidden';
-        
-            // Array to store image objects
-            const images = [];
-
-            const randomNumber = getRandomIntInclusive(1, 10);
-            
-            if (randomNumber !== 10) {
-                // Create 30 images and add them to the header__page
-                for (let i = 1; i <= imagesCount; i++) {
-                    const img = document.createElement('div');
-                    img.style.position = 'absolute';
-                    img.style.width = `${imageSize}px`;
-                    img.style.height = `${imageSize}px`;
-                    img.style.backgroundImage = `url(../assets/images/donoguys/${i}.png)`;
-                    img.style.backgroundSize = 'cover';
-                    img.style.backgroundPosition = 'center';
-                    img.style.backgroundSize = 'contain';
-                    img.style.backgroundRepeat = 'no-repeat';
-            
-                    // Random initial position and uniform velocity
-                    let x, y;
-                    const speed = 16; // Uniform speed
-                    const angle = Math.random() * 2 * Math.PI; // Random direction
-                    const dx = speed * Math.cos(angle);
-                    const dy = speed * Math.sin(angle);
-            
-                    do {
-                        x = Math.random() * (headerPage.clientWidth - imageSize);
-                        y = Math.random() * (headerPage.clientHeight - imageSize);
-                    } while (
-                        x < titleDiv.offsetLeft + titleDiv.offsetWidth &&
-                        x + imageSize > titleDiv.offsetLeft &&
-                        y < titleDiv.offsetTop + titleDiv.offsetHeight &&
-                        y + imageSize > titleDiv.offsetTop
-                    );
-            
-                    img.style.left = `${x}px`;
-                    img.style.top = `${y}px`;
-            
-                    images.push({ element: img, x, y, dx, dy });
-                    headerPage.appendChild(img);
-                }
-            } else {
-                for (let i = 1; i <= imagesCount; i++) {
-                    const img = document.createElement('div');
-                    img.style.position = 'absolute';
-                    img.style.width = `${imageSize}px`;
-                    img.style.height = `${imageSize}px`;
-                    img.style.backgroundImage = `url(${emotesData[i]})`;
-                    img.style.backgroundSize = 'cover';
-                    img.style.backgroundPosition = 'center';
-                    img.style.backgroundSize = 'contain';
-                    img.style.backgroundRepeat = 'no-repeat';
-            
-                    // Random initial position and uniform velocity
-                    let x, y;
-                    const speed = 16; // Uniform speed
-                    const angle = Math.random() * 2 * Math.PI; // Random direction
-                    const dx = speed * Math.cos(angle);
-                    const dy = speed * Math.sin(angle);
-            
-                    do {
-                        x = Math.random() * (headerPage.clientWidth - imageSize);
-                        y = Math.random() * (headerPage.clientHeight - imageSize);
-                    } while (
-                        x < titleDiv.offsetLeft + titleDiv.offsetWidth &&
-                        x + imageSize > titleDiv.offsetLeft &&
-                        y < titleDiv.offsetTop + titleDiv.offsetHeight &&
-                        y + imageSize > titleDiv.offsetTop
-                    );
-            
-                    img.style.left = `${x}px`;
-                    img.style.top = `${y}px`;
-            
-                    images.push({ element: img, x, y, dx, dy });
-                    headerPage.appendChild(img);
-                }
-            }
-        
-            function animate() {
-                const headerRect = headerPage.getBoundingClientRect();
-                const titleRect = titleDiv.getBoundingClientRect();
-        
-                images.forEach(image => {
-                    const { element, dx, dy } = image;
-        
-                    // Update position
-                    image.x += dx;
-                    image.y += dy;
-        
-                    // Collision detection with header__page
-                    if (image.x <= 0) {
-                        image.x = 1; // Prevent exact 0 to avoid shaking
-                        image.dx *= -1;
-                    } else if (image.x + imageSize >= headerRect.width) {
-                        image.x = headerRect.width - imageSize - 1;
-                        image.dx *= -1;
-                    }
-        
-                    if (image.y <= 0) {
-                        image.y = 1;
-                        image.dy *= -1;
-                    } else if (image.y + imageSize >= headerRect.height) {
-                        image.y = headerRect.height - imageSize - 1;
-                        image.dy *= -1;
-                    }
-        
-                    // Collision detection with header__titleDiv
-                    if (
-                        image.x < titleRect.right - headerRect.left &&
-                        image.x + imageSize > titleRect.left - headerRect.left &&
-                        image.y < titleRect.bottom - headerRect.top &&
-                        image.y + imageSize > titleRect.top - headerRect.top
-                    ) {
-                        if (image.x < titleRect.left - headerRect.left ||
-                            image.x + imageSize > titleRect.right - headerRect.left) {
-                            image.dx *= -1;
-                        }
-                        if (image.y < titleRect.top - headerRect.top ||
-                            image.y + imageSize > titleRect.bottom - headerRect.top) {
-                            image.dy *= -1;
-                        }
-                    }
-        
-                    // Apply position updates
-                    element.style.left = `${image.x}px`;
-                    element.style.top = `${image.y}px`;
-                });
-        
-                requestAnimationFrame(animate);
-            }
-        
-            animate();
-        });
-
         /*Corrigé par ChatGPT : Descente de la nav au passage de la souris*/
         const nav = document.querySelector('.header__nav');
         const hoverArea = document.createElement('div');
@@ -246,109 +102,6 @@ if (criticNav) {
    if (window.matchMedia("(max-width: 1200px").matches) {
     burgerMenu.classList.remove('hidden');
     navExit.classList.remove('hidden');
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const headerPage = document.querySelector('.header__page');
-        const titleDiv = document.querySelector('.header__titleDiv');
-        const imagesCount = 15;
-        const imageSize = 100;
-    
-        // Set styles for the header__page
-        headerPage.style.position = 'relative';
-        headerPage.style.overflowX = 'hidden';
-    
-        // Array to store image objects
-        const images = [];
-    
-        // Create 30 images and add them to the header__page
-        for (let i = 1; i <= imagesCount; i++) {
-            const img = document.createElement('div');
-            img.style.position = 'absolute';
-            img.style.width = `${imageSize}px`;
-            img.style.height = `${imageSize}px`;
-            img.style.backgroundImage = `url(../assets/images/donoguys/${i}.png)`;
-            img.style.backgroundSize = 'cover';
-            img.style.backgroundPosition = 'center';
-    
-            // Random initial position and uniform velocity
-            let x, y;
-            const speed = 8; // Uniform speed
-            const angle = Math.random() * 2 * Math.PI; // Random direction
-            const dx = speed * Math.cos(angle);
-            const dy = speed * Math.sin(angle);
-    
-            do {
-                x = Math.random() * (headerPage.clientWidth - imageSize);
-                y = Math.random() * (headerPage.clientHeight - imageSize);
-            } while (
-                x < titleDiv.offsetLeft + titleDiv.offsetWidth &&
-                x + imageSize > titleDiv.offsetLeft &&
-                y < titleDiv.offsetTop + titleDiv.offsetHeight &&
-                y + imageSize > titleDiv.offsetTop
-            );
-    
-            img.style.left = `${x}px`;
-            img.style.top = `${y}px`;
-    
-            images.push({ element: img, x, y, dx, dy });
-            headerPage.appendChild(img);
-        }
-    
-        function animate() {
-            const headerRect = headerPage.getBoundingClientRect();
-            const titleRect = titleDiv.getBoundingClientRect();
-    
-            images.forEach(image => {
-                const { element, dx, dy } = image;
-    
-                // Update position
-                image.x += dx;
-                image.y += dy;
-    
-                // Collision detection with header__page
-                if (image.x <= 0) {
-                    image.x = 1; // Prevent exact 0 to avoid shaking
-                    image.dx *= -1;
-                } else if (image.x + imageSize >= headerRect.width) {
-                    image.x = headerRect.width - imageSize - 1;
-                    image.dx *= -1;
-                }
-    
-                if (image.y <= 0) {
-                    image.y = 1;
-                    image.dy *= -1;
-                } else if (image.y + imageSize >= headerRect.height) {
-                    image.y = headerRect.height - imageSize - 1;
-                    image.dy *= -1;
-                }
-    
-                // Collision detection with header__titleDiv
-                if (
-                    image.x < titleRect.right - headerRect.left &&
-                    image.x + imageSize > titleRect.left - headerRect.left &&
-                    image.y < titleRect.bottom - headerRect.top &&
-                    image.y + imageSize > titleRect.top - headerRect.top
-                ) {
-                    if (image.x < titleRect.left - headerRect.left ||
-                        image.x + imageSize > titleRect.right - headerRect.left) {
-                        image.dx *= -1;
-                    }
-                    if (image.y < titleRect.top - headerRect.top ||
-                        image.y + imageSize > titleRect.bottom - headerRect.top) {
-                        image.dy *= -1;
-                    }
-                }
-    
-                // Apply position updates
-                element.style.left = `${image.x}px`;
-                element.style.top = `${image.y}px`;
-            });
-    
-            requestAnimationFrame(animate);
-        }
-    
-        animate();
-    });
    }
 
 } else if (donoguysAsides) {
@@ -367,151 +120,6 @@ if (criticNav) {
         for (let i = 0; i < socialsOutParagraphs.length; i++) {
             socialsOutParagraphs[i].classList.add('hidden');
         }
-
-        /*Généré par ChatGPT : Animations des donoguys dans le header*/
-        document.addEventListener('DOMContentLoaded', () => {
-            const headerPage = document.querySelector('.header__page');
-            const titleDiv = document.querySelector('.header__titleDiv');
-            const imagesCount = 30;
-            const imageSize = 150;
-        
-            // Set styles for the header__page
-            headerPage.style.position = 'relative';
-            headerPage.style.overflowX = 'hidden';
-        
-            // Array to store image objects
-            const images = [];
-
-            const randomNumber = getRandomIntInclusive(1, 10);
-            
-            if (randomNumber !== 10) {
-                // Create 30 images and add them to the header__page
-                for (let i = 1; i <= imagesCount; i++) {
-                    const img = document.createElement('div');
-                    img.style.position = 'absolute';
-                    img.style.width = `${imageSize}px`;
-                    img.style.height = `${imageSize}px`;
-                    img.style.backgroundImage = `url(./assets/images/donoguys/${i}.png)`;
-                    img.style.backgroundSize = 'cover';
-                    img.style.backgroundPosition = 'center';
-                    img.style.backgroundSize = 'contain';
-                    img.style.backgroundRepeat = 'no-repeat';
-            
-                    // Random initial position and uniform velocity
-                    let x, y;
-                    const speed = 16; // Uniform speed
-                    const angle = Math.random() * 2 * Math.PI; // Random direction
-                    const dx = speed * Math.cos(angle);
-                    const dy = speed * Math.sin(angle);
-            
-                    do {
-                        x = Math.random() * (headerPage.clientWidth - imageSize);
-                        y = Math.random() * (headerPage.clientHeight - imageSize);
-                    } while (
-                        x < titleDiv.offsetLeft + titleDiv.offsetWidth &&
-                        x + imageSize > titleDiv.offsetLeft &&
-                        y < titleDiv.offsetTop + titleDiv.offsetHeight &&
-                        y + imageSize > titleDiv.offsetTop
-                    );
-            
-                    img.style.left = `${x}px`;
-                    img.style.top = `${y}px`;
-            
-                    images.push({ element: img, x, y, dx, dy });
-                    headerPage.appendChild(img);
-                }
-            } else {
-                for (let i = 1; i <= imagesCount; i++) {
-                    const img = document.createElement('div');
-                    img.style.position = 'absolute';
-                    img.style.width = `${imageSize}px`;
-                    img.style.height = `${imageSize}px`;
-                    img.style.backgroundImage = `url(${emotes[i]})`;
-                    img.style.backgroundSize = 'cover';
-                    img.style.backgroundPosition = 'center';
-                    img.style.backgroundSize = 'contain';
-                    img.style.backgroundRepeat = 'no-repeat';
-            
-                    // Random initial position and uniform velocity
-                    let x, y;
-                    const speed = 16; // Uniform speed
-                    const angle = Math.random() * 2 * Math.PI; // Random direction
-                    const dx = speed * Math.cos(angle);
-                    const dy = speed * Math.sin(angle);
-            
-                    do {
-                        x = Math.random() * (headerPage.clientWidth - imageSize);
-                        y = Math.random() * (headerPage.clientHeight - imageSize);
-                    } while (
-                        x < titleDiv.offsetLeft + titleDiv.offsetWidth &&
-                        x + imageSize > titleDiv.offsetLeft &&
-                        y < titleDiv.offsetTop + titleDiv.offsetHeight &&
-                        y + imageSize > titleDiv.offsetTop
-                    );
-            
-                    img.style.left = `${x}px`;
-                    img.style.top = `${y}px`;
-            
-                    images.push({ element: img, x, y, dx, dy });
-                    headerPage.appendChild(img);
-                }
-            }
-        
-            function animate() {
-                const headerRect = headerPage.getBoundingClientRect();
-                const titleRect = titleDiv.getBoundingClientRect();
-        
-                images.forEach(image => {
-                    const { element, dx, dy } = image;
-        
-                    // Update position
-                    image.x += dx;
-                    image.y += dy;
-        
-                    // Collision detection with header__page
-                    if (image.x <= 0) {
-                        image.x = 1; // Prevent exact 0 to avoid shaking
-                        image.dx *= -1;
-                    } else if (image.x + imageSize >= headerRect.width) {
-                        image.x = headerRect.width - imageSize - 1;
-                        image.dx *= -1;
-                    }
-        
-                    if (image.y <= 0) {
-                        image.y = 1;
-                        image.dy *= -1;
-                    } else if (image.y + imageSize >= headerRect.height) {
-                        image.y = headerRect.height - imageSize - 1;
-                        image.dy *= -1;
-                    }
-        
-                    // Collision detection with header__titleDiv
-                    if (
-                        image.x < titleRect.right - headerRect.left &&
-                        image.x + imageSize > titleRect.left - headerRect.left &&
-                        image.y < titleRect.bottom - headerRect.top &&
-                        image.y + imageSize > titleRect.top - headerRect.top
-                    ) {
-                        if (image.x < titleRect.left - headerRect.left ||
-                            image.x + imageSize > titleRect.right - headerRect.left) {
-                            image.dx *= -1;
-                        }
-                        if (image.y < titleRect.top - headerRect.top ||
-                            image.y + imageSize > titleRect.bottom - headerRect.top) {
-                            image.dy *= -1;
-                        }
-                    }
-        
-                    // Apply position updates
-                    element.style.left = `${image.x}px`;
-                    element.style.top = `${image.y}px`;
-                });
-        
-                requestAnimationFrame(animate);
-            }
-        
-            animate();
-        });
 
 
         /*Alternance des couleurs du bouton*/
@@ -541,216 +149,6 @@ if (criticNav) {
         nav.addEventListener('mouseleave', function() {
             nav.classList.remove('header__nav--active');
         })
-
-
-        /*Modification du code de ChatGPT : Animations des donoguys dans les asides (gauche puis droite)*/
-        document.addEventListener('DOMContentLoaded', () => {
-            const headerPage = document.querySelector('.donoguys--left');
-            const titleDiv = document.querySelector('main');
-            const imagesCount = 30;
-            const imageSize = 150;
-            
-            // Set styles for the header__page
-            headerPage.style.position = 'relative';
-            headerPage.style.overflowX = 'hidden';
-            
-            // Array to store image objects
-            const images = [];
-            
-            // Create 30 images and add them to the header__page
-            for (let i = 1; i <= imagesCount; i++) {
-                const img = document.createElement('div');
-                img.style.position = 'absolute';
-                img.style.width = `${imageSize}px`;
-                img.style.height = `${imageSize}px`;
-                img.style.backgroundImage = `url(./assets/images/donoguys/${i}.png)`;
-                img.style.backgroundSize = 'cover';
-                img.style.backgroundPosition = 'center';
-            
-                // Random initial position and uniform velocity
-                let x, y;
-                const speed = 8; // Uniform speed
-                const angle = Math.random() * 2 * Math.PI; // Random direction
-                const dx = speed * Math.cos(angle);
-                const dy = speed * Math.sin(angle);
-            
-                do {
-                    x = Math.random() * (headerPage.clientWidth - imageSize);
-                    y = Math.random() * (headerPage.clientHeight - imageSize);
-                } while (
-                    x < titleDiv.offsetLeft + titleDiv.offsetWidth &&
-                    x + imageSize > titleDiv.offsetLeft &&
-                    y < titleDiv.offsetTop + titleDiv.offsetHeight &&
-                    y + imageSize > titleDiv.offsetTop
-                );
-            
-                img.style.left = `${x}px`;
-                img.style.top = `${y}px`;
-            
-                images.push({ element: img, x, y, dx, dy });
-                headerPage.appendChild(img);
-            }
-            
-            function animate() {
-                const headerRect = headerPage.getBoundingClientRect();
-                const titleRect = titleDiv.getBoundingClientRect();
-            
-                images.forEach(image => {
-                    const { element, dx, dy } = image;
-            
-                    // Update position
-                    image.x += dx;
-                    image.y += dy;
-            
-                    // Collision detection with header__page
-                    if (image.x <= 0) {
-                        image.x = 1; // Prevent exact 0 to avoid shaking
-                        image.dx *= -1;
-                    } else if (image.x + imageSize >= headerRect.width) {
-                        image.x = headerRect.width - imageSize - 1;
-                        image.dx *= -1;
-                    }
-            
-                    if (image.y <= 0) {
-                        image.y = 1;
-                        image.dy *= -1;
-                    } else if (image.y + imageSize >= headerRect.height) {
-                        image.y = headerRect.height - imageSize - 1;
-                        image.dy *= -1;
-                    }
-            
-                    // Collision detection with header__titleDiv
-                    if (
-                        image.x < titleRect.right - headerRect.left &&
-                        image.x + imageSize > titleRect.left - headerRect.left &&
-                        image.y < titleRect.bottom - headerRect.top &&
-                        image.y + imageSize > titleRect.top - headerRect.top
-                    ) {
-                        if (image.x < titleRect.left - headerRect.left ||
-                            image.x + imageSize > titleRect.right - headerRect.left) {
-                            image.dx *= -1;
-                        }
-                        if (image.y < titleRect.top - headerRect.top ||
-                            image.y + imageSize > titleRect.bottom - headerRect.top) {
-                            image.dy *= -1;
-                        }
-                    }
-            
-                    // Apply position updates
-                    element.style.left = `${image.x}px`;
-                    element.style.top = `${image.y}px`;
-                });
-            
-                requestAnimationFrame(animate);
-            }
-            
-            animate();
-        });
-        
-        
-            
-        document.addEventListener('DOMContentLoaded', () => {
-        const headerPage = document.querySelector('.donoguys--right');
-        const titleDiv = document.querySelector('main');
-        const imagesCount = 30;
-        const imageSize = 150;
-        
-        // Set styles for the header__page
-        headerPage.style.position = 'relative';
-        headerPage.style.overflowX = 'hidden';
-        
-        // Array to store image objects
-        const images = [];
-        
-        // Create 30 images and add them to the header__page
-        for (let i = 1; i <= imagesCount; i++) {
-            const img = document.createElement('div');
-            img.style.position = 'absolute';
-            img.style.width = `${imageSize}px`;
-            img.style.height = `${imageSize}px`;
-            img.style.backgroundImage = `url(./assets/images/donoguys/${i}.png)`;
-            img.style.backgroundSize = 'cover';
-            img.style.backgroundPosition = 'center';
-        
-            // Random initial position and uniform velocity
-            let x, y;
-            const speed = 8; // Uniform speed
-            const angle = Math.random() * 2 * Math.PI; // Random direction
-            const dx = speed * Math.cos(angle);
-            const dy = speed * Math.sin(angle);
-        
-            do {
-                x = Math.random() * (headerPage.clientWidth - imageSize);
-                y = Math.random() * (headerPage.clientHeight - imageSize);
-            } while (
-                x < titleDiv.offsetLeft + titleDiv.offsetWidth &&
-                x + imageSize > titleDiv.offsetLeft &&
-                y < titleDiv.offsetTop + titleDiv.offsetHeight &&
-                y + imageSize > titleDiv.offsetTop
-            );
-        
-            img.style.left = `${x}px`;
-            img.style.top = `${y}px`;
-        
-            images.push({ element: img, x, y, dx, dy });
-            headerPage.appendChild(img);
-        }
-        
-        function animate() {
-            const headerRect = headerPage.getBoundingClientRect();
-            const titleRect = titleDiv.getBoundingClientRect();
-        
-            images.forEach(image => {
-                const { element, dx, dy } = image;
-        
-                // Update position
-                image.x += dx;
-                image.y += dy;
-        
-                // Collision detection with header__page
-                if (image.x <= 0) {
-                    image.x = 1; // Prevent exact 0 to avoid shaking
-                    image.dx *= -1;
-                } else if (image.x + imageSize >= headerRect.width) {
-                    image.x = headerRect.width - imageSize - 1;
-                    image.dx *= -1;
-                }
-        
-                if (image.y <= 0) {
-                    image.y = 1;
-                    image.dy *= -1;
-                } else if (image.y + imageSize >= headerRect.height) {
-                    image.y = headerRect.height - imageSize - 1;
-                    image.dy *= -1;
-                }
-        
-                // Collision detection with header__titleDiv
-                if (
-                    image.x < titleRect.right - headerRect.left &&
-                    image.x + imageSize > titleRect.left - headerRect.left &&
-                    image.y < titleRect.bottom - headerRect.top &&
-                    image.y + imageSize > titleRect.top - headerRect.top
-                ) {
-                    if (image.x < titleRect.left - headerRect.left ||
-                        image.x + imageSize > titleRect.right - headerRect.left) {
-                        image.dx *= -1;
-                    }
-                    if (image.y < titleRect.top - headerRect.top ||
-                        image.y + imageSize > titleRect.bottom - headerRect.top) {
-                        image.dy *= -1;
-                    }
-                }
-        
-                // Apply position updates
-                element.style.left = `${image.x}px`;
-                element.style.top = `${image.y}px`;
-            });
-        
-            requestAnimationFrame(animate);
-        }
-        
-        animate();
-        });
     }
     
     if (window.matchMedia("(max-width: 1200px)").matches) {
@@ -765,109 +163,6 @@ if (criticNav) {
         for (let i = 0; i < socialsOutParagraphs.length; i++) {
             socialsOutParagraphs[i].classList.remove('hidden');
         }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const headerPage = document.querySelector('.header__page');
-            const titleDiv = document.querySelector('.header__titleDiv');
-            const imagesCount = 15;
-            const imageSize = 100;
-        
-            // Set styles for the header__page
-            headerPage.style.position = 'relative';
-            headerPage.style.overflowX = 'hidden';
-        
-            // Array to store image objects
-            const images = [];
-        
-            // Create 30 images and add them to the header__page
-            for (let i = 1; i <= imagesCount; i++) {
-                const img = document.createElement('div');
-                img.style.position = 'absolute';
-                img.style.width = `${imageSize}px`;
-                img.style.height = `${imageSize}px`;
-                img.style.backgroundImage = `url(./assets/images/donoguys/${i}.png)`;
-                img.style.backgroundSize = 'cover';
-                img.style.backgroundPosition = 'center';
-        
-                // Random initial position and uniform velocity
-                let x, y;
-                const speed = 8; // Uniform speed
-                const angle = Math.random() * 2 * Math.PI; // Random direction
-                const dx = speed * Math.cos(angle);
-                const dy = speed * Math.sin(angle);
-        
-                do {
-                    x = Math.random() * (headerPage.clientWidth - imageSize);
-                    y = Math.random() * (headerPage.clientHeight - imageSize);
-                } while (
-                    x < titleDiv.offsetLeft + titleDiv.offsetWidth &&
-                    x + imageSize > titleDiv.offsetLeft &&
-                    y < titleDiv.offsetTop + titleDiv.offsetHeight &&
-                    y + imageSize > titleDiv.offsetTop
-                );
-        
-                img.style.left = `${x}px`;
-                img.style.top = `${y}px`;
-        
-                images.push({ element: img, x, y, dx, dy });
-                headerPage.appendChild(img);
-            }
-        
-            function animate() {
-                const headerRect = headerPage.getBoundingClientRect();
-                const titleRect = titleDiv.getBoundingClientRect();
-        
-                images.forEach(image => {
-                    const { element, dx, dy } = image;
-        
-                    // Update position
-                    image.x += dx;
-                    image.y += dy;
-        
-                    // Collision detection with header__page
-                    if (image.x <= 0) {
-                        image.x = 1; // Prevent exact 0 to avoid shaking
-                        image.dx *= -1;
-                    } else if (image.x + imageSize >= headerRect.width) {
-                        image.x = headerRect.width - imageSize - 1;
-                        image.dx *= -1;
-                    }
-        
-                    if (image.y <= 0) {
-                        image.y = 1;
-                        image.dy *= -1;
-                    } else if (image.y + imageSize >= headerRect.height) {
-                        image.y = headerRect.height - imageSize - 1;
-                        image.dy *= -1;
-                    }
-        
-                    // Collision detection with header__titleDiv
-                    if (
-                        image.x < titleRect.right - headerRect.left &&
-                        image.x + imageSize > titleRect.left - headerRect.left &&
-                        image.y < titleRect.bottom - headerRect.top &&
-                        image.y + imageSize > titleRect.top - headerRect.top
-                    ) {
-                        if (image.x < titleRect.left - headerRect.left ||
-                            image.x + imageSize > titleRect.right - headerRect.left) {
-                            image.dx *= -1;
-                        }
-                        if (image.y < titleRect.top - headerRect.top ||
-                            image.y + imageSize > titleRect.bottom - headerRect.top) {
-                            image.dy *= -1;
-                        }
-                    }
-        
-                    // Apply position updates
-                    element.style.left = `${image.x}px`;
-                    element.style.top = `${image.y}px`;
-                });
-        
-                requestAnimationFrame(animate);
-            }
-        
-            animate();
-        });
         
         /* Fin du code de la nav */
         
@@ -889,21 +184,189 @@ if (criticNav) {
         alternateButtonColor();
 
         /* Code amélioré par corrigé par ChatGPT */
+    }
+
+    if (window.matchMedia("(min-width: 1400px)").matches) {
+        for (let i = 0; i < donoguysAsides.length; i++) {
+            donoguysAsides[i].classList.remove('hidden');
+        }
+    }
+
+    if (window.matchMedia("(max-width: 1400px)").matches) {
+        for (let i = 0; i < donoguysAsides.length; i++) {
+            donoguysAsides[i].classList.add('hidden');
+        }
+    }
+}
+
+
+/* Code généré par ChatGPT, optimisé par moi ensuite, fusion des deux codes des Aside par ChatGPT */
+
+if (dataSocial || donoguysAsides) {
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.matchMedia("(min-width: 1200px)").matches) {
+            var imagesCount = 30;
+        } else if (window.matchMedia("(max-width: 1200px)").matches) {
+            var imagesCount = 15;
+        }
+
+        const headerPage = document.querySelector('.header__page');
+        const titleDiv = document.querySelector('.header__titleDiv');
+        const imageSize = 150;
+
+        // Set styles for the header__page
+        headerPage.style.position = 'relative';
+        headerPage.style.overflowX = 'hidden';
+
+        // Array to store image objects
+        const images = [];
+
+        const randomNumber = getRandomIntInclusive(1, 10);
         
-        document.addEventListener('DOMContentLoaded', () => {
-            const headerPage = document.querySelector('.donoguys--left');
+        if (randomNumber !== 10) {
+            // Create 30 images and add them to the header__page
+            for (let i = 1; i <= imagesCount; i++) {
+                const img = document.createElement('div');
+                img.style.position = 'absolute';
+                img.style.width = `${imageSize}px`;
+                img.style.height = `${imageSize}px`;
+                img.style.backgroundImage = `url(../assets/images/donoguys/${i}.png)`;
+                img.style.backgroundSize = 'cover';
+                img.style.backgroundPosition = 'center';
+                img.style.backgroundSize = 'contain';
+                img.style.backgroundRepeat = 'no-repeat';
+        
+                // Random initial position and uniform velocity
+                let x, y;
+                const speed = 16; // Uniform speed
+                const angle = Math.random() * 2 * Math.PI; // Random direction
+                const dx = speed * Math.cos(angle);
+                const dy = speed * Math.sin(angle);
+        
+                do {
+                    x = Math.random() * (headerPage.clientWidth - imageSize);
+                    y = Math.random() * (headerPage.clientHeight - imageSize);
+                } while (
+                    x < titleDiv.offsetLeft + titleDiv.offsetWidth &&
+                    x + imageSize > titleDiv.offsetLeft &&
+                    y < titleDiv.offsetTop + titleDiv.offsetHeight &&
+                    y + imageSize > titleDiv.offsetTop
+                );
+        
+                img.style.left = `${x}px`;
+                img.style.top = `${y}px`;
+        
+                images.push({ element: img, x, y, dx, dy });
+                headerPage.appendChild(img);
+            }
+        } else {
+            for (let i = 1; i <= imagesCount; i++) {
+                const img = document.createElement('div');
+                img.style.position = 'absolute';
+                img.style.width = `${imageSize}px`;
+                img.style.height = `${imageSize}px`;
+                img.style.backgroundImage = `url(${emotesData[i]})`;
+                img.style.backgroundSize = 'cover';
+                img.style.backgroundPosition = 'center';
+                img.style.backgroundSize = 'contain';
+                img.style.backgroundRepeat = 'no-repeat';
+        
+                // Random initial position and uniform velocity
+                let x, y;
+                const speed = 16; // Uniform speed
+                const angle = Math.random() * 2 * Math.PI; // Random direction
+                const dx = speed * Math.cos(angle);
+                const dy = speed * Math.sin(angle);
+        
+                do {
+                    x = Math.random() * (headerPage.clientWidth - imageSize);
+                    y = Math.random() * (headerPage.clientHeight - imageSize);
+                } while (
+                    x < titleDiv.offsetLeft + titleDiv.offsetWidth &&
+                    x + imageSize > titleDiv.offsetLeft &&
+                    y < titleDiv.offsetTop + titleDiv.offsetHeight &&
+                    y + imageSize > titleDiv.offsetTop
+                );
+        
+                img.style.left = `${x}px`;
+                img.style.top = `${y}px`;
+        
+                images.push({ element: img, x, y, dx, dy });
+                headerPage.appendChild(img);
+            }
+        }
+
+        function animate() {
+            const headerRect = headerPage.getBoundingClientRect();
+            const titleRect = titleDiv.getBoundingClientRect();
+
+            images.forEach(image => {
+                const { element, dx, dy } = image;
+
+                // Update position
+                image.x += dx;
+                image.y += dy;
+
+                // Collision detection with header__page
+                if (image.x <= 0) {
+                    image.x = 1; // Prevent exact 0 to avoid shaking
+                    image.dx *= -1;
+                } else if (image.x + imageSize >= headerRect.width) {
+                    image.x = headerRect.width - imageSize - 1;
+                    image.dx *= -1;
+                }
+
+                if (image.y <= 0) {
+                    image.y = 1;
+                    image.dy *= -1;
+                } else if (image.y + imageSize >= headerRect.height) {
+                    image.y = headerRect.height - imageSize - 1;
+                    image.dy *= -1;
+                }
+
+                // Collision detection with header__titleDiv
+                if (
+                    image.x < titleRect.right - headerRect.left &&
+                    image.x + imageSize > titleRect.left - headerRect.left &&
+                    image.y < titleRect.bottom - headerRect.top &&
+                    image.y + imageSize > titleRect.top - headerRect.top
+                ) {
+                    if (image.x < titleRect.left - headerRect.left ||
+                        image.x + imageSize > titleRect.right - headerRect.left) {
+                        image.dx *= -1;
+                    }
+                    if (image.y < titleRect.top - headerRect.top ||
+                        image.y + imageSize > titleRect.bottom - headerRect.top) {
+                        image.dy *= -1;
+                    }
+                }
+
+                // Apply position updates
+                element.style.left = `${image.x}px`;
+                element.style.top = `${image.y}px`;
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    });
+
+    if (donoguysAsides) {
+        function initializeAnimation(containerClass) {
+            const headerPage = document.querySelector(containerClass);
             const titleDiv = document.querySelector('main');
             const imagesCount = 30;
-            const imageSize = 100;
+            const imageSize = 150;
             
-            // Set styles for the header__page
+            // Set styles for the container
             headerPage.style.position = 'relative';
             headerPage.style.overflowX = 'hidden';
             
             // Array to store image objects
             const images = [];
             
-            // Create 30 images and add them to the header__page
+            // Create images and add them to the container
             for (let i = 1; i <= imagesCount; i++) {
                 const img = document.createElement('div');
                 img.style.position = 'absolute';
@@ -948,7 +411,7 @@ if (criticNav) {
                     image.x += dx;
                     image.y += dy;
             
-                    // Collision detection with header__page
+                    // Collision detection with headerPage
                     if (image.x <= 0) {
                         image.x = 1; // Prevent exact 0 to avoid shaking
                         image.dx *= -1;
@@ -965,7 +428,7 @@ if (criticNav) {
                         image.dy *= -1;
                     }
             
-                    // Collision detection with header__titleDiv
+                    // Collision detection with titleDiv
                     if (
                         image.x < titleRect.right - headerRect.left &&
                         image.x + imageSize > titleRect.left - headerRect.left &&
@@ -991,18 +454,12 @@ if (criticNav) {
             }
             
             animate();
-        });
-    }
-
-    if (window.matchMedia("(min-width: 1400px)").matches) {
-        for (let i = 0; i < donoguysAsides.length; i++) {
-            donoguysAsides[i].classList.remove('hidden');
         }
-    }
-
-    if (window.matchMedia("(max-width: 1400px)").matches) {
-        for (let i = 0; i < donoguysAsides.length; i++) {
-            donoguysAsides[i].classList.add('hidden');
-        }
+        
+        // Run the animation for each desired container
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeAnimation('.donoguys--left');
+            initializeAnimation('.donoguys--right');
+        });        
     }
 }

@@ -71,7 +71,7 @@
     position: relative;
 }
 
-.title {
+.Ctitle {
     margin-top: 0;
     margin-bottom: 62px;
 
@@ -169,7 +169,7 @@
         font-size: 31px;
     }
     
-    .title {
+    .Ctitle {
         width: 60%;
     
         font-size: 44px;
