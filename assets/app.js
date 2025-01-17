@@ -209,7 +209,7 @@ if (!criticNav) {
             var imageSize = 150;
         } else if (window.matchMedia("(max-width: 1200px)").matches) {
             var imagesCount = 15;
-            var imageSize = 100;
+            var imageSize = 75;
         }
 
         const headerPage = document.querySelector('.header__page');
@@ -245,7 +245,7 @@ if (!criticNav) {
         
                 // Random initial position and uniform velocity
                 let x, y;
-                const speed = 16; // Uniform speed
+                const speed = 8; // Uniform speed
                 const angle = Math.random() * 2 * Math.PI; // Random direction
                 const dx = speed * Math.cos(angle);
                 const dy = speed * Math.sin(angle);
@@ -286,7 +286,7 @@ if (!criticNav) {
         
                 // Random initial position and uniform velocity
                 let x, y;
-                const speed = 16; // Uniform speed
+                const speed = 8; // Uniform speed
                 const angle = Math.random() * 2 * Math.PI; // Random direction
                 const dx = speed * Math.cos(angle);
                 const dy = speed * Math.sin(angle);
