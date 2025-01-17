@@ -202,7 +202,7 @@ if (criticNav) {
 
 /* Code généré par ChatGPT, optimisé par moi ensuite, fusion des deux codes des Aside par ChatGPT */
 
-if (dataSocial || donoguysAsides) {
+if (!criticNav) {
     document.addEventListener('DOMContentLoaded', () => {
         if (window.matchMedia("(min-width: 1200px)").matches) {
             var imagesCount = 30;
@@ -352,7 +352,7 @@ if (dataSocial || donoguysAsides) {
         animate();
     });
 
-    if (donoguysAsides) {
+    if (!dataSocial) {
         function initializeAnimation(containerClass) {
             const headerPage = document.querySelector(containerClass);
             const titleDiv = document.querySelector('main');
