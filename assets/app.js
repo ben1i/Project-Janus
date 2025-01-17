@@ -230,7 +230,13 @@ if (!criticNav) {
                 img.style.position = 'absolute';
                 img.style.width = `${imageSize}px`;
                 img.style.height = `${imageSize}px`;
-                img.style.backgroundImage = `url(../assets/images/donoguys/${i}.png)`;
+                
+                if (dataSocial) {
+                    img.style.backgroundImage = `url(../assets/images/donoguys/${i}.png)`;
+                } else {
+                    img.style.backgroundImage = `url(./assets/images/donoguys/${i}.png)`;
+                }
+                
                 img.style.backgroundSize = 'cover';
                 img.style.backgroundPosition = 'center';
                 img.style.backgroundSize = 'contain';
