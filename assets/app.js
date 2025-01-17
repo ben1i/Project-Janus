@@ -226,16 +226,16 @@ if (!criticNav) {
         
         if (randomNumber !== 10) {
             // Create 30 images and add them to the header__page
-            for (let i = 1; i <= imagesCount; i++) {
+            for (let i = 0; i < imagesCount; i++) {
                 const img = document.createElement('div');
                 img.style.position = 'absolute';
                 img.style.width = `${imageSize}px`;
                 img.style.height = `${imageSize}px`;
                 
                 if (dataSocial) {
-                    img.style.backgroundImage = `url(../assets/images/donoguys/${i}.png)`;
+                    img.style.backgroundImage = `url(../assets/images/donoguys/${i + 1}.png)`;
                 } else {
-                    img.style.backgroundImage = `url(./assets/images/donoguys/${i}.png)`;
+                    img.style.backgroundImage = `url(./assets/images/donoguys/${i  + 1}.png)`;
                 }
                 
                 img.style.backgroundSize = 'cover';
@@ -267,7 +267,9 @@ if (!criticNav) {
                 headerPage.appendChild(img);
             }
         } else {
-            for (let i = 1; i <= imagesCount; i++) {
+            imagesCount = 21;
+
+            for (let i = 0; i < imagesCount; i++) {
                 const img = document.createElement('div');
                 img.style.position = 'absolute';
                 img.style.width = `${imageSize}px`;
